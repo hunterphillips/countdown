@@ -1,0 +1,32 @@
+{
+  "name": "countdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hunterphillips/countdown.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hunterphillips/countdown/issues"
+  },
+  "homepage": "https://github.com/hunterphillips/countdown#readme",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "handlebars": "^4.0.11",
+    "hbsfy": "^2.8.1",
+    "jquery": "^3.2.1",
+    "matchdep": "^2.0.0",
+    "moment": "^2.20.1"
+  }
+}
