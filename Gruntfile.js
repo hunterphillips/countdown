@@ -1,19 +1,12 @@
 module.exports = function (grunt) {
    grunt.initConfig({
-      browserify: {
-         js: {
-            src: ["./javascripts/main.js"],
-            dest: "./dist/app.js"
-         }
-      },
       jshint: {
-         files: ["./javascripts/**/*.js"],
+         files: ["./app/**/*.js"],
          options: {
-            predef: ["document", "console"],
+            predef: ["document", "console", "firebase", "moment"],
             esnext: true,
             globalstrict: true,
-            globals: {},
-            browserify: true
+            globals: { "angular": true }
          }
       },
       sass: {
@@ -25,8 +18,8 @@ module.exports = function (grunt) {
       },
       watch: {
          javascripts: {
-            files: ["./javascripts/**/*.js"],
-            tasks: ["jshint", "browserify"]
+            files: ["./app/**/*.js"],
+            tasks: ["jshint"]
          },
          sass: {
             files: ["./sass/**/*.scss"],
@@ -38,5 +31,5 @@ module.exports = function (grunt) {
    require("matchdep")
       .filter("grunt-*")
       .forEach(grunt.loadNpmTasks);
-   grunt.registerTask("default", ["jshint", "browserify", "sass", "watch"]);
+   grunt.registerTask("default", ["jshint", "sass", "watch"]);
 };

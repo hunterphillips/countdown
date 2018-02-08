@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/hunterphillips/countdown#readme",
   "dependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "bulma": "^0.6.2",
+    "electron": "^1.7.12",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.2.0",
     "grunt-contrib-jshint": "^1.1.0",
@@ -27,6 +31,8 @@
     "hbsfy": "^2.8.1",
     "jquery": "^3.2.1",
     "matchdep": "^2.0.0",
+    "mdi": "^2.1.19",
     "moment": "^2.20.1"
-  }
+  },
+  "devDependencies": {}
 }

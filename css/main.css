@@ -1,3 +1,40 @@
+html {
+  background-color: transparent; }
 
+.field {
+  padding: 1em; }
+
+.form-section {
+  padding: .5em 0em; }
+
+.label {
+  font-size: .95em;
+  display: inline-block;
+  vertical-align: bottom; }
+
+.userInput .sex {
+  display: inline; }
+
+.dob {
+  display: inline; }
+
+.bmi {
+  width: 4.6em;
+  display: inline-block; }
+
+.bmi-label {
+  display: inline-block;
+  font-size: .8em;
+  margin-bottom: 0 !important; }
+
+.exercise-select {
+  width: 8em; }
+
+.addClock {
+  font-size: 1.75em;
+  padding: 0.16em 0.146em;
+  height: .9em;
+  font-weight: 300;
+  padding-bottom: 9px; }
 
 /*# sourceMappingURL=main.css.map */
