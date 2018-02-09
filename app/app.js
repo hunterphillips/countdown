@@ -6,11 +6,11 @@ angular.module('CountdownApp',[])
       templateUrl: 'templates/user-form.html',
       controller: 'UserFormCtrl'
    };
-});
+})
 
-// .directive('clock', function(){
-//    return {
-//       templateUrl: 'templates/clock.html',
-//       controller: 'ClockCtrl'
-//    };
-// });
+.directive('titleBar', function(){
+   return {
+      templateUrl: 'templates/title-bar.html',
+      controller: 'TitleBarCtrl'
+   };
+});

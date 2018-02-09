@@ -9,10 +9,10 @@ let win = null;
 function createWindow() {
    //create browser window
    win = new BrowserWindow({
-      width: 800,
-      height: 600,
+      width: 500,
+      height: 545,
       // transparent: true,
-      // frame: false,
+      frame: false,
       // alwaysOnTop: true
    });
 

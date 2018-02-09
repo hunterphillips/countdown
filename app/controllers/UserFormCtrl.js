@@ -1,7 +1,7 @@
 'use strict'; 
 angular.module('CountdownApp')
 
-.controller('UserFormCtrl', function($scope, TimeFactory, $interval, MetricsFactory){
+   .controller('UserFormCtrl', function ($scope, TimeFactory, $interval, MetricsFactory, $timeout){
  
    $scope.monthInput = "";
    $scope.yearInput = "";
@@ -11,6 +11,14 @@ angular.module('CountdownApp')
    $scope.endtimes = [];
    $scope.clocks = [];
    $scope.user = {};
+   $scope.clock = {};
+   let runningClock = null;
+
+   $scope.removeClock = function(){
+      $scope.clock = {};
+      $interval.cancel(runningClock);
+      $scope.displayClock = false;
+   };
 
    $scope.getYearsLeft = function(){
       //format yrs/months to age for api call 
@@ -27,29 +35,24 @@ angular.module('CountdownApp')
       $scope.user.bmi = MetricsFactory.calcBMI($scope.height, $scope.weight);
       TimeFactory.getTimeLeft($scope.user.sex, $scope.user.country, $scope.user.age, $scope.user.smokeRate, $scope.user.bmi)
       .then(date => {
-         //hide form, show clock(s)
-         $scope.displayClock = true; 
-         initializeClock(date);
+         $scope.clocks.push(TimeFactory.makeClockObj(date));
+         $scope.endtimes.push(date);
+   
+            initializeClock(date);
       });
    };
 
    const initializeClock = (endtime) => {
-      const updateClock = () => {
-         let clock = TimeFactory.makeClockObj(endtime);
-         $scope.days = clock.days;
-         $scope.hours = ('0' + clock.hours).slice(-2);
-         $scope.minutes = ('0' + clock.minutes).slice(-2);
-         $scope.seconds = ('0' + clock.seconds).slice(-2);
 
-         if (endtime.total <= 0) {
-            $interval.cancel((timeinterval));
-         }
-      };
-      updateClock(endtime);
-      let timeinterval = $interval(updateClock, 1000);
+      // for (let clock of $scope.clocks) {
+         runningClock = $interval(function(){
+               // $scope.clocks.splice(($scope.clocks.indexOf(clock)), 1, TimeFactory.makeClockObj(endtime));
+               $scope.clock = TimeFactory.makeClockObj(endtime);
+            }, 1000);
+         // }   
+      //hide form, show clock(s)
+      $scope.displayClock = true; 
    };
-   
+
 });
 
-//push new clock to array
-// $scope.clocks.push(TimeFactory.makeClockObj(date));

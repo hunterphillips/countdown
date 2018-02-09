@@ -2,10 +2,53 @@ html{
    background-color: transparent;
 }
 
-//-------- form ----------//
+body {
+   background-color: rgba(0,106,183,.3);
+   background-image: url(../images/hrGlass.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 34.1em;
+}
+
+//--------- title bar --------//
+#title-bar {
+ -webkit-app-region: drag;
+ height: 40px; 
+ background-color: transparent;
+ padding: none;
+ margin: 0px; 
+}
+
+#title {
+ position: fixed;
+ top: 6px;
+ left: 1em;
+ color: rgba(245, 237, 237, 0.32);
+}
+
+#title-bar-btns {
+ -webkit-app-region: no-drag;
+ position: fixed;
+ top: 0px;
+ right: 1em;
+}
+#title-bar-btns button {
+   background-color: transparent;
+   border: none;
+   color: rgba(255, 255, 255, 0.56);
+   font-size: 1.5em;
+   font-weight: 300;
+}
+
+//--------- form ----------//
 .field {
-   // line-height: 2.8em;
-   padding: 1em;
+   padding: .5em 1em;
+   width: 23em;
+   margin: 1em auto;
+   border-radius: 5px;
+   border: 1px solid rgba(250, 250, 250, 0.2);
+   background-color: rgba(250,250,250,.28);
+   box-shadow: 2px 2px 19px 0px rgba(0, 0, 0, 0.2);
 }
 
 .form-section {
@@ -16,14 +59,33 @@ html{
    font-size: .95em;
    display: inline-block;
    vertical-align: bottom;
+   color: rgb(150, 245, 207);
 }
 
-.userInput .sex {
-   display: inline;
+.field select {
+   // background-color: rgba(250,250,250,.2);
+   // color: white;
+   // background-color: rgba(152, 152, 152, 0.27);
+   // color: rgba(255, 255, 255, 0.84);
+}
+
+.field .input {
+   // background-color: rgba(152, 152, 152, 0.27);
+   // color: rgba(255, 255, 255, 0.84);
 }
 
 .dob {
    display: inline;
+}
+
+.sex-section {
+   padding-top: .2em;
+}
+.userInput .sex {
+   display: inline;
+}
+.female-label {
+   padding-left: .7em;
 }
 
 .bmi {
@@ -32,7 +94,7 @@ html{
 }
 .bmi-label {
    display: inline-block;
-   font-size: .8em;
+   font-size: .85em;
    margin-bottom: 0 !important;
 }
 
@@ -42,10 +104,56 @@ html{
 
 
 //------------ clock -----------//
-.addClock{
-   font-size: 1.75em;
+.clock {
+   margin: 1em; //<<< temp
+   width: 20.78em;  // change to vw
+
+   padding: .25em;
+   display: flex;
+   border: 2px solid;
+   border-radius: 10px;
+   color: ghostwhite;
+   background-color: rgba(250,250,250,.13);
+}
+
+.clockSegment {
+   display: flex;
+   flex-direction: column;
+   padding: 0em 0.5em;
+   // border: 1px solid;
+}
+.clockSegment span{
+   text-align: center;
+   font-size: 1.65em;
+   font-weight: 600;
+}
+.clockSegment label {
+   text-align: center;
+   font-size: .95em;
+   letter-spacing: .3px;
+}
+
+.colon {
+   font-size: 2em;
+   line-height: 1em;
+   font-weight: 600;
+   width: .1em;
+}
+
+.addClock {
+   height: .8em;
+   left: 14.4em;
+   font-size: 1.4em;
    padding: 0.16em 0.146em;
-   height: .9em;
    font-weight: 300;
    padding-bottom: 9px;
+   opacity: .9;
+   position: absolute;
+   opacity: 0;
+   transition: opacity .5s;  
+   z-index: 4; 
+}
+.clock:hover .addClock {
+   opacity: .55;
+   transition: opacity .5s;
 }
