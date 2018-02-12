@@ -7,32 +7,35 @@ body {
    background-image: url(../images/hrGlass.jpg);
    background-repeat: no-repeat;
    background-size: cover;
-   height: 34.1em;
+   // background-size: 53em 37em;
+   height: 34.28em;
 }
 
 //--------- title bar --------//
-#title-bar {
+.title-bar {
  -webkit-app-region: drag;
  height: 40px; 
  background-color: transparent;
  padding: none;
- margin: 0px; 
+ margin: 2px; 
 }
 
-#title {
+.title {
  position: fixed;
- top: 6px;
+ top: 8px;
  left: 1em;
  color: rgba(245, 237, 237, 0.32);
+ font-size: 1em;
+ line-height: 1.5em;
 }
 
-#title-bar-btns {
+.title-bar-btns {
  -webkit-app-region: no-drag;
  position: fixed;
  top: 0px;
  right: 1em;
 }
-#title-bar-btns button {
+.title-bar-btns button {
    background-color: transparent;
    border: none;
    color: rgba(255, 255, 255, 0.56);
@@ -42,9 +45,9 @@ body {
 
 //--------- form ----------//
 .field {
-   padding: .5em 1em;
-   width: 23em;
-   margin: 1em auto;
+   padding: .65em 1em;
+   width: 21em;
+   margin: 1.7em auto;
    border-radius: 5px;
    border: 1px solid rgba(250, 250, 250, 0.2);
    background-color: rgba(250,250,250,.28);
@@ -97,9 +100,23 @@ body {
    font-size: .85em;
    margin-bottom: 0 !important;
 }
+//weight height inputs - arrows
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 
 .exercise-select {
    width: 8em;
+}
+
+.optional {
+   color: rgba(255, 255, 255, 0.73);
+   font-size: .85em;
+   vertical-align: bottom;
+   font-style: italic;
+   font-weight: 400;
 }
 
 
@@ -140,7 +157,7 @@ body {
    width: .1em;
 }
 
-.addClock {
+.removeClock, .addClock {
    height: .8em;
    left: 14.4em;
    font-size: 1.4em;
@@ -149,11 +166,11 @@ body {
    padding-bottom: 9px;
    opacity: .9;
    position: absolute;
-   opacity: 0;
-   transition: opacity .5s;  
-   z-index: 4; 
+   // opacity: 0;
+   // transition: opacity .5s;  
+   // z-index: 4; 
 }
-.clock:hover .addClock {
-   opacity: .55;
-   transition: opacity .5s;
+.clock:hover .removeClock {
+   // opacity: .55;
+   // transition: opacity .5s;
 }

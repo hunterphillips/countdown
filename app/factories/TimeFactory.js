@@ -18,7 +18,7 @@ angular.module('CountdownApp')
 
       return {
          'total': t,
-         // 'years': years,
+         'endtime': endtime,
          'days': days,
          'hours': hours,
          'minutes': minutes,

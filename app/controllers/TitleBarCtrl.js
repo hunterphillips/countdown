@@ -1,31 +1,22 @@
 'use strict'; 
 angular.module('CountdownApp')
 
-.controller('TitleBarCtrl', function($scope ){
-   // const remote = require('electron').remote; 
+.controller('TitleBarCtrl', function ($scope, currentWindow){
 
-   $scope.minWindow = function () {
-      // const window = electron.remote.getCurrentWindow();
-      // window.minimize(); 
+   $scope.minWindow = function() {
+      currentWindow.minimize(); 
+   };
+   
+   $scope.maxWindow = function() {
+      if(!currentWindow.isMaximized()){
+         currentWindow.maximize();
+      }else{
+         currentWindow.unmaximize();
+      }
    };
         
-   // document.getElementById("max-btn").addEventListener("click", function (e) {
-   //    const window = remote.getCurrentWindow();
-   //    if (!window.isMaximized()) {
-   //    window.maximize();
-   //    } else {
-   //    window.unmaximize();
-   //    }	 
-   // });
-        
-   // document.getElementById("close-btn").addEventListener("click", function (e) {
-   //    const window = remote.getCurrentWindow();
-   //    window.close();
-   // }); 
-      
-   // document.onreadystatechange = function () {
-   //    if (document.readyState == "complete") {
-   //       init(); 
-   //    }
-   // };
+   $scope.closeWindow = function(){
+      currentWindow.close();
+   };
+
 });
