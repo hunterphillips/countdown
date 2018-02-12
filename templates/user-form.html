@@ -1,11 +1,11 @@
-<div class="userInput field" ng-hide="displayClock">
+<form class="userInput field" name="userForm" ng-hide="displayClock">
    
    <div class="form-section">
       <label for="month" class="label dob-label">Date of Birth</label>
       <div class="control dob">
          <span class="select month">
-            <select name="month" ng-model="monthInput">
-                  <option value="" selected="selected">MM</option>
+            <select name="month" ng-model="monthInput" required>
+                  <option value="" selected="selected" disabled>MM</option>
                   <option value="1">01</option>
                   <option value="2">02</option>
                   <option value="3">03</option>
@@ -24,8 +24,8 @@
 
       <div class="control dob">
          <span class="select year">
-            <select name="year" ng-model="yearInput">
-                  <option value="" selected="selected">YYYY</option>
+            <select name="year" ng-model="yearInput" required>
+                  <option value="" selected="selected" disabled>YYYY</option>
                   <option value="2018">2018</option>
                   <option value="2017">2017</option>
                   <option value="2016">2016</option>
@@ -148,7 +148,7 @@
 
    <div class="form-section sex-section">
       <label for "male" class="label sex">Male</label>
-      <input class="radio sexSelect" type="radio" name="sex" value="male" ng-model="user.sex">
+      <input class="radio sexSelect" type="radio" name="sex" value="male" ng-model="user.sex" required>
       <label for "female" class="label sex female-label">Female</label>
       <input class="radio sexSelect" type="radio" name="sex" value="female" ng-model="user.sex">
       <br>
@@ -157,7 +157,7 @@
    <div class="form-section">
       <p class="control has-icons-left">
          <span class="select">
-            <select name="country" class="country" ng-model="user.country">
+            <select name="country" class="country" ng-model="user.country" required>
                <option value="" selected="selected" disabled>Select Country</option>
                <option value="United States">United States</option>
                <option value="United Kingdom">United Kingdom</option>
@@ -320,7 +320,7 @@
    <div class="form-section">
       <div class="control">
          <span class="select">
-            <select name="smoke" ng-model="user.smokeRate">
+            <select name="smoke" ng-model="user.smokeRate" required>
                <option value="" selected="selected" disabled>Cigarettes per day</option>
                <option value="1">None</option>
                <option value=".96">Up to 10</option>
@@ -336,14 +336,15 @@
 
    <div class="form-section">
       <div class="control bmi">
-         <input class="input" type="text" placeholder="Height" ng-model="height">
+         <input class="input" type="number" placeholder="Height" ng-model="height">
       </div>
       <label class="label bmi-label">inches</label>
 
       <div class="control bmi">
-         <input class="input" type="text" placeholder="Weight" ng-model="weight">
+         <input class="input" type="number" placeholder="Weight" ng-model="weight">
       </div>
       <label class="label bmi-label">lbs</label>
+      <span class="optional">- optional</span>
    </div>
 
    <div class="form-section">
@@ -356,18 +357,20 @@
                <option value="1.07">Over 4 hours</option>
             </select>
          </span>
+         <span class="optional">- optional</span>
       </div>
    </div>
 
    <div class="form-section">
       <div>
-         <button class="button submit" ng-click="getYearsLeft()">Submit</button>
+         <button class="button submit" ng-click="getYearsLeft()" ng-disabled="!userForm.$valid">Submit</button>
       </div>
    </div>
-</div>
+
+</form>
 
 <div ng-hide="!displayClock">
-   <div class="clock">
+   <div class="clock" ng-repeat="clock in clocks">
       <div class="clockSegment">
          <span class="days">{{clock.days}}</span> 
          <label for="">Days</label>
@@ -387,7 +390,7 @@
          <span class="seconds">{{clock.seconds}}</span>
          <label for="">Seconds</label>
       </div>
-      <a class="button is-danger is-outlined addClock" ng-click="removeClock()">x</a>
+      <a class="button is-danger is-outlined removeClock" ng-click="removeClock()">x</a>
    </div>
-   <!-- <a class="button is-primary is-outlined addClock" ng-click="displayClock=!displayClock">+</a> -->
+   <a class="button is-primary is-outlined addClock" ng-click="addClock()">+</a>
 </div>

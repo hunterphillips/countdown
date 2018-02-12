@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hunterphillips/countdown#readme",
   "dependencies": {
     "angular": "^1.6.9",
+    "angular-electron": "^0.2.1",
     "angular-route": "^1.6.9",
     "bulma": "^0.6.2",
     "electron": "^1.7.12",
