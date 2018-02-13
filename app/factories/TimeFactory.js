@@ -5,11 +5,12 @@ angular.module('CountdownApp')
 
    const getFutureDate = (years => {
       let days = years * 365;
+      //current date in milliseconds + ms til future date
       let futureDate = new Date(Date.now() + (1000 * 60 * 60 * 24 * days));
       return futureDate;
    });
 
-   function makeClockObj(endtime){
+   function makeClockObj(endtime, name){
       let t = Date.parse(endtime) - Date.parse(new Date());
       let seconds = Math.floor((t / 1000) % 60);
       let minutes = Math.floor((t / 1000 / 60) % 60);
@@ -19,6 +20,27 @@ angular.module('CountdownApp')
       return {
          'total': t,
          'endtime': endtime,
+         'name': name,
+         'days': days,
+         'hours': hours,
+         'minutes': minutes,
+         'seconds': seconds
+      };
+   }
+
+   function makeYrClockObj(endtime, name) {
+      let t = Date.parse(endtime) - Date.parse(new Date());
+      let seconds = Math.floor((t / 1000) % 60);
+      let minutes = Math.floor((t / 1000 / 60) % 60);
+      let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+      let totalDays = Math.floor(t / (1000 * 60 * 60 * 24));
+      let years = Math.floor(totalDays/365);
+      let days = Math.floor(((totalDays/365) - years)*365);
+      return {
+         'total': t,
+         'endtime': endtime,
+         'name': name,
+         'years': years,
          'days': days,
          'hours': hours,
          'minutes': minutes,
@@ -48,5 +70,5 @@ angular.module('CountdownApp')
       });
    }
 
-   return { getTimeLeft, makeClockObj, monthsOld };
+   return { getTimeLeft, makeClockObj, makeYrClockObj, monthsOld };
 });

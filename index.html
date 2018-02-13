@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="formHtml" lang="en">
+<html class="formHtml" lang="en" ng-app="CountdownApp">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
    <title>The Final Countdown</title>
 </head>
 
-<body ng-app="CountdownApp">
+<body ng-class="{ 'visi': !displayClock, 'invi': displayClock }">
 
    <title-bar></title-bar>
    

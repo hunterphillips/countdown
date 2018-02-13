@@ -1,12 +1,22 @@
 html {
-  background-color: transparent; }
+  background-color: transparent;
+  min-width: 441px; }
 
 body {
-  background-color: rgba(0, 106, 183, 0.3);
-  background-image: url(../images/hrGlass.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 34.28em; }
+  height: 99.7vh; }
+
+.visi {
+  background-image: url(../images/hrGlass.jpg); }
+
+.invi {
+  background-image: none;
+  background: transparent;
+  height: fit-content;
+  width: fit-content;
+  min-width: 321.92px;
+  margin: auto; }
 
 .title-bar {
   -webkit-app-region: drag;
@@ -18,23 +28,29 @@ body {
 .title {
   position: fixed;
   top: 8px;
-  left: 1em;
+  left: 10vw;
   color: rgba(245, 237, 237, 0.32);
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 1.5em; }
 
 .title-bar-btns {
   -webkit-app-region: no-drag;
   position: fixed;
   top: 0px;
-  right: 1em; }
+  right: 10vw; }
 
 .title-bar-btns button {
   background-color: transparent;
   border: none;
-  color: rgba(255, 255, 255, 0.56);
+  color: white;
   font-size: 1.5em;
-  font-weight: 300; }
+  font-weight: 300;
+  opacity: .5;
+  transition: opacity .2s; }
+
+.title-bar-btns button:hover {
+  opacity: .7;
+  transition: opacity .2s; }
 
 .field {
   padding: .65em 1em;
@@ -53,6 +69,10 @@ body {
   display: inline-block;
   vertical-align: bottom;
   color: #96f5cf; }
+
+.name {
+  width: 8.3em;
+  display: inline-block; }
 
 .dob {
   display: inline; }
@@ -88,47 +108,111 @@ input[type=number]::-webkit-outer-spin-button {
   font-size: .85em;
   vertical-align: bottom;
   font-style: italic;
-  font-weight: 400; }
+  font-weight: 500;
+  text-shadow: 1px 1px rgba(45, 45, 45, 0.25); }
+
+.submit-div:hover span {
+  opacity: 1;
+  transition: opacity .2s; }
+
+.submit-div span {
+  vertical-align: bottom;
+  font-size: .8em;
+  color: #f3f3f3;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity .2s; }
+
+.hideBar {
+  height: 7vw;
+  margin: 0;
+  opacity: 0;
+  transition: opacity .2s; }
+
+body:hover .hideBar {
+  opacity: 1;
+  transition: opacity .2s; }
+
+.clock-wrap {
+  width: fit-content;
+  min-width: 321px;
+  margin: auto; }
 
 .clock {
-  margin: 1em;
-  width: 20.78em;
+  margin: 1em auto;
+  width: 73vw;
+  min-width: 320px;
   padding: .25em;
+  padding-top: .4em;
   display: flex;
   border: 2px solid;
   border-radius: 10px;
   color: ghostwhite;
-  background-color: rgba(250, 250, 250, 0.13); }
+  background-color: rgba(51, 47, 47, 0.19);
+  backface-visibility: hidden; }
 
 .clockSegment {
   display: flex;
   flex-direction: column;
-  padding: 0em 0.5em; }
+  padding: 0em .9vw;
+  width: 25%;
+  backface-visibility: hidden; }
 
 .clockSegment span {
   text-align: center;
-  font-size: 1.65em;
+  font-size: 5vw;
   font-weight: 600; }
 
 .clockSegment label {
   text-align: center;
-  font-size: .95em;
+  font-size: 3.3vw;
   letter-spacing: .3px; }
 
 .colon {
-  font-size: 2em;
+  font-size: 6vw;
   line-height: 1em;
   font-weight: 600;
   width: .1em; }
 
 .removeClock, .addClock {
   height: .8em;
-  left: 14.4em;
-  font-size: 1.4em;
-  padding: 0.16em 0.146em;
+  left: 81.4vw;
+  font-size: 1.35em;
+  padding: 0.16em 0.12em;
   font-weight: 300;
   padding-bottom: 9px;
   opacity: .9;
-  position: absolute; }
+  position: absolute;
+  backface-visibility: hidden; }
+
+.removeClock {
+  opacity: 0;
+  transition: opacity .4s;
+  z-index: 4; }
+
+.clock-wrap:hover .removeClock {
+  opacity: .6;
+  transition: opacity .4s;
+  backface-visibility: hidden; }
+
+.clock-name {
+  position: relative;
+  width: 0;
+  padding: 0;
+  top: -1.5vw;
+  left: 0vw;
+  font-size: 2.5vw;
+  font-weight: 700;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.11);
+  color: bisque; }
+
+.checkbox {
+  font-size: 3.2vw;
+  font-weight: 700;
+  color: rgba(147, 255, 227, 0.87);
+  text-shadow: 0.5px 0.5px rgba(0, 0, 0, 0.2); }
+
+.checkbox:hover {
+  color: #93ffe3; }
 
 /*# sourceMappingURL=main.css.map */
