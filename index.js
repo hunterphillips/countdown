@@ -9,11 +9,13 @@ let win = null;
 function createWindow() {
    //create browser window
    win = new BrowserWindow({
-      width: 500,
-      height: 550,
-      // transparent: true,
+      width: 550,
+      height: 580,
+      'minWidth': 441,
+      'minHeight': 165,
+      transparent: true,
       frame: false,
-      // alwaysOnTop: true
+      hasShadow: false
    });
 
    //load index.html

@@ -1,5 +1,12 @@
 <form class="userInput field" name="userForm" ng-hide="displayClock">
-   
+   <div class="form-section">
+      <label for="name" class="label name-label">Name</label>
+      <div class="control name">
+         <input class="input" type="text" placeholder="John" ng-model="user.name">
+      </div>
+      <span class="optional">- optional</span>
+   </div>
+
    <div class="form-section">
       <label for="month" class="label dob-label">Date of Birth</label>
       <div class="control dob">
@@ -362,35 +369,49 @@
    </div>
 
    <div class="form-section">
-      <div>
+      <div class="submit-div">
          <button class="button submit" ng-click="getYearsLeft()" ng-disabled="!userForm.$valid">Submit</button>
+         <span ng-show="!userForm.$valid">*Please fill in all required fields</span>
       </div>
    </div>
 
 </form>
 
-<div ng-hide="!displayClock">
+<div class="clock-wrap" ng-hide="!displayClock">
    <div class="clock" ng-repeat="clock in clocks">
+      <span class="clock-name">{{clock.name}}</span>
+      <div class="clockSegment" ng-show="showYears">
+         <span class="years">{{clock.years}}</span>
+         <label for="">Years</label>
+      </div>
+      <span class="colon" ng-show="showYears">:</span>
+
       <div class="clockSegment">
          <span class="days">{{clock.days}}</span> 
          <label for="">Days</label>
       </div>
       <span class="colon">:</span>
+
       <div class="clockSegment"> 
          <span class="hours">{{clock.hours}}</span>
          <label for="">Hours</label>
       </div>
       <span class="colon">:</span>
+
       <div class="clockSegment">
          <span class="minutes">{{clock.minutes}}</span>
          <label for="">Minutes</label>
       </div>
       <span class="colon">:</span>
+      
       <div class="clockSegment">
          <span class="seconds">{{clock.seconds}}</span>
          <label for="">Seconds</label>
       </div>
       <a class="button is-danger is-outlined removeClock" ng-click="removeClock()">x</a>
    </div>
+   <label class="checkbox yrs-checkbox">
+      <input type="checkbox" ng-model="showYears"> Show Years
+   </label>
    <a class="button is-primary is-outlined addClock" ng-click="addClock()">+</a>
 </div>
