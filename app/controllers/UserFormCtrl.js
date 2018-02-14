@@ -19,7 +19,7 @@ angular.module('CountdownApp')
 
    $scope.addClock = function(){
       // $interval.cancel(runningClock);
-      currentWindow.setSize(550,580);
+      currentWindow.setSize(550,615);
       $rootScope.displayClock = false;
    };
 
@@ -40,9 +40,9 @@ angular.module('CountdownApp')
       $scope.user.bmi = MetricsFactory.calcBMI($scope.height, $scope.weight);
       TimeFactory.getTimeLeft($scope.user.sex, $scope.user.country, $scope.user.age, $scope.user.smokeRate, $scope.user.bmi)
       .then(date => {
-         currentWindow.setSize(500,400);
          // make new clock and add to collection
          $scope.clocks.push(TimeFactory.makeClockObj(date,$scope.user.name));
+         currentWindow.setSize(500,(80+(95*$scope.clocks.length)));
          initializeClocks($scope.clocks);
       });
    };
@@ -60,7 +60,6 @@ angular.module('CountdownApp')
          }
       //hide form, show clock(s)
       $rootScope.displayClock = true; 
-      // currentWindow.setSize(360, 170);
    };
 
 });

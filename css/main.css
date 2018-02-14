@@ -1,42 +1,65 @@
 html {
   background-color: transparent;
-  min-width: 441px; }
+  height: 100vh; }
 
 body {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 99.7vh; }
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 5px; }
 
 .visi {
   background-image: url(../images/hrGlass.jpg); }
 
 .invi {
+  border: 2px solid rgba(255, 255, 255, 0);
   background-image: none;
   background: transparent;
-  height: fit-content;
-  width: fit-content;
-  min-width: 321.92px;
-  margin: auto; }
+  min-width: 321.92px; }
 
 .title-bar {
   -webkit-app-region: drag;
-  height: 40px;
-  background-color: transparent;
-  padding: none;
-  margin: 2px; }
+  height: 6.4vh;
+  min-height: 2.2em;
+  max-height: 3em;
+  background-color: rgba(249, 246, 246, 0.16); }
+
+.title-bar img {
+  z-index: -1;
+  position: absolute;
+  bottom: .2em;
+  height: 17vw;
+  max-height: 11em;
+  max-width: 11em;
+  width: 18vw;
+  opacity: 0.4;
+  left: 43%; }
+
+#clockIcon {
+  height: 2vw;
+  width: 2vw;
+  opacity: 1; }
+
+.alt-logo {
+  height: 12vw !important;
+  width: 12vw !important;
+  opacity: 0.4 !important;
+  left: 0.4% !important; }
 
 .title {
   position: fixed;
-  top: 8px;
+  top: 1.4vh;
   left: 10vw;
+  margin-bottom: 0;
   color: rgba(245, 237, 237, 0.32);
-  font-size: 1.1em;
+  font-size: 1.12em;
   line-height: 1.5em; }
 
 .title-bar-btns {
   -webkit-app-region: no-drag;
   position: fixed;
-  top: 0px;
+  top: .6vh;
   right: 10vw; }
 
 .title-bar-btns button {
@@ -54,8 +77,9 @@ body {
 
 .field {
   padding: .65em 1em;
-  width: 21em;
-  margin: 1.7em auto;
+  width: 76vw;
+  max-width: 24em;
+  margin: 7vw auto;
   border-radius: 5px;
   border: 1px solid rgba(250, 250, 250, 0.2);
   background-color: rgba(250, 250, 250, 0.28);
@@ -123,6 +147,16 @@ input[type=number]::-webkit-outer-spin-button {
   opacity: 0;
   transition: opacity .2s; }
 
+.show-border {
+  border: 2px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+  height: 100%;
+  transition: border .2s; }
+
+html:hover .show-border {
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  transition: border .2s; }
+
 .hideBar {
   height: 7vw;
   margin: 0;
@@ -142,7 +176,7 @@ body:hover .hideBar {
   margin: 1em auto;
   width: 73vw;
   min-width: 320px;
-  padding: .25em;
+  padding: 1vw;
   padding-top: .4em;
   display: flex;
   border: 2px solid;
@@ -165,7 +199,7 @@ body:hover .hideBar {
 
 .clockSegment label {
   text-align: center;
-  font-size: 3.3vw;
+  font-size: 3.2vw;
   letter-spacing: .3px; }
 
 .colon {
@@ -175,15 +209,19 @@ body:hover .hideBar {
   width: .1em; }
 
 .removeClock, .addClock {
-  height: .8em;
-  left: 81.4vw;
-  font-size: 1.35em;
-  padding: 0.16em 0.12em;
+  height: 4.2vw;
+  width: 4vw;
+  left: 81.2vw;
+  font-size: 4vw;
+  padding: 1vw;
   font-weight: 300;
   padding-bottom: 9px;
   opacity: .9;
   position: absolute;
   backface-visibility: hidden; }
+
+.addClock {
+  margin-top: 2px; }
 
 .removeClock {
   opacity: 0;
