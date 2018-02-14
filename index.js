@@ -10,19 +10,19 @@ function createWindow() {
    //create browser window
    win = new BrowserWindow({
       width: 550,
-      height: 580,
-      'minWidth': 441,
-      'minHeight': 165,
+      height: 615,
+      'minWidth': 375,
       transparent: true,
       frame: false,
-      hasShadow: false
+      hasShadow: false,
+      icon: path.join(__dirname, 'images/icons/png/64x64.png')
    });
 
    //load index.html
    win.loadURL(`file://${__dirname}/index.html`);
 
    //open devtools
-   win.webContents.openDevTools();
+   // win.webContents.openDevTools();
 
    win.on('closed', () => {
       win = null;
