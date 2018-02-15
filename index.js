@@ -12,6 +12,7 @@ function createWindow() {
       width: 550,
       height: 615,
       'minWidth': 375,
+      'minHeight': 175,
       transparent: true,
       frame: false,
       hasShadow: false,

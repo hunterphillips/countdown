@@ -161,7 +161,7 @@
       <br>
    </div>
    
-   <div class="form-section">
+   <div class="form-section country-section">
       <p class="control has-icons-left">
          <span class="select">
             <select name="country" class="country" ng-model="user.country" required>
@@ -356,11 +356,11 @@
    <div class="form-section">
       <div class="control">
          <span class="select exercise-select">
-            <select name="exercise">
+            <select name="exercise" ng-model="exerciseInput">
                <option value="" selected="selected" disabled>Exercise</option>
-               <option value="1">Less than 2 hours per week</option>
-               <option value="1.04">2 - 4 hours</option>
-               <option value="1.07">Over 4 hours</option>
+               <option value=".99">Less than 2 hours per week</option>
+               <option value="1.03">2 - 4 hours</option>
+               <option value="1.06">Over 4 hours</option>
             </select>
          </span>
          <span class="optional">- optional</span>
@@ -407,11 +407,30 @@
          <span class="seconds">{{clock.seconds}}</span>
          <label for="">Seconds</label>
       </div>
-      <a class="button is-danger is-outlined removeClock" ng-click="removeClock()">x</a>
+
+      <div class="clock-tools">
+         <a class="button is-danger is-outlined removeClock" ng-click="removeClock()">x</a>
+      </div>
    </div>
-   <label class="checkbox yrs-checkbox">
-      <input type="checkbox" ng-model="showYears"> Show Years
-   </label>
-   <a class="button is-primary is-outlined addClock" ng-click="addClock()">+</a>
+
+   <div class="clockWrap-tools">
+      <label class="checkbox yrs-checkbox">
+         <input type="checkbox" ng-model="showYears"> Show Years
+      </label>
+      <span class="icon" ng-click="toggleModal()">
+         <i class="far fa-chart-bar"></i>
+      </span>
+      <a class="button is-primary is-outlined addClock" ng-click="addClock()">+</a>
+   </div>
+
+   <div class="modal clock-modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+         <canvas class="life-chart chart chart-bar" chart-data="data" 
+         chart-labels="labels" legend="true" chart-series="series">
+         </canvas>
+      </div>
+      <button class="modal-close is-large" aria-label="close" ng-click="toggleModal()"></button>
+   </div>
 </div>
 <!-- resizable r-directions="['right']" -->
