@@ -4,7 +4,7 @@ The Final Countdown is a cross-platform desktop application that uses user demog
 
 The application logic is written in JavaScript and rendered with the Electron framework.
 
-![launch screen](https://github.com/hunterphillips/countdown/tree/master/images/homeScreen.jpg)
+![launch screen](https://github.com/hunterphillips/countdown/blob/master/images/homeScreenshot.jpg)
 
 ## Start Timer
 
@@ -18,7 +18,7 @@ Then follow these steps:
    3. With `grunt` running, run `npm start`
 
 ### Clock Example:
-![clock screen](https://github.com/hunterphillips/countdown/tree/master/images/clockScreen.jpg)
+![clock screen](https://github.com/hunterphillips/countdown/blob/master/images/clockScreenshot.jpg)
 
 ## Built With
 * [Electron](https://electronjs.org/) - Open-source framework for building desktop applications
