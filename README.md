@@ -18,7 +18,7 @@ Then follow these steps:
    3. With `grunt` running, run `npm start`
 
 ### Clock Example:
-![clock screen](https://github.com/hunterphillips/countdown/blob/master/images/clockScreenshot.jpg)
+![clock screen](https://github.com/hunterphillips/countdown/blob/master/images/clock-screenshot.jpg)
 
 ## Built With
 * [Electron](https://electronjs.org/) - Open-source framework for building desktop applications
