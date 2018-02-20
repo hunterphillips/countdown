@@ -19,7 +19,7 @@ angular.module('CountdownApp')
 
     $scope.addClock = function(){
         // $interval.cancel(runningClock);
-        currentWindow.setSize(550,615);
+        currentWindow.setSize(550, 625);
         $rootScope.displayClock = false;
     };
 
@@ -59,7 +59,7 @@ angular.module('CountdownApp')
             } else {
                 clocksArr[clock] = TimeFactory.makeClockObj(clocksArr[clock].endtime, clocksArr[clock]);
             }
-            }, 1000);
+         }, 1000);
         }
         //hide form, show clock(s)
         $rootScope.displayClock = true; 
@@ -75,14 +75,50 @@ angular.module('CountdownApp')
         document.querySelector('.clock-modal').classList.toggle("is-active");
         //adjust screen size for modal/clock view
         if( document.querySelector('.clock-modal').classList.contains('is-active')){
-            currentWindow.setSize(615,475);
+            currentWindow.setSize(500 + (25 * $scope.clocks.length), 585);
+        } else {
+            currentWindow.setSize(500, (80 + (95 * $scope.clocks.length)));
+        }
+
+        $scope.series = ['Current Years Remaining', 'Max Years Remaining'];
+        $scope.options = { 
+            responsive: true,
+            maintainAspectRatio: false,
+            legend: { display: true },
+            scales: {
+                yAxes: [{ 
+                    display: true,
+                    ticks: { beginAtZero: true, stepValue: 10, max: 100 },
+                    scaleLabel: { display: true, labelString: 'Years'} 
+                }],
+                xAxes: [{
+                    stacked: true,
+                    maxBarThickness: 90,
+                }]
+            }
+        };
+    };
+    
+
+
+    //--------------------- Calender Modal ---------------//
+    $scope.toggleDate = function(){
+        // get end date and name of selected clock
+        if(this.clock){
+            $scope.graveName = this.clock.name;
+            $scope.endDate = this.clock.endtime.toDateString().substring(4);
+        }
+
+        document.querySelector('.calender-modal').classList.toggle("is-active");
+        //adjust screen size for modal/clock view
+        if (document.querySelector('.calender-modal').classList.contains('is-active')) {
+            currentWindow.setSize(500, 500);
         } else {
             currentWindow.setSize(500, (80 + (95 * $scope.clocks.length)));
         }
     };
-    
-    $scope.series = ['Current Years Remaining', 'Max Years Remaining'];
-    $scope.options = { legend: { display: true } };
 
 });
+
+
 

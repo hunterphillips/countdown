@@ -410,6 +410,9 @@
 
       <div class="clock-tools">
          <a class="button is-danger is-outlined removeClock" ng-click="removeClock()">x</a>
+         <span class="icon calender-icon" ng-click="toggleDate()">
+            <i class="far fa-calendar-alt"></i>
+         </span>
       </div>
    </div>
 
@@ -417,7 +420,7 @@
       <label class="checkbox yrs-checkbox">
          <input type="checkbox" ng-model="showYears"> Show Years
       </label>
-      <span class="icon" ng-click="toggleModal()">
+      <span class="icon chart-icon" ng-click="toggleModal()">
          <i class="far fa-chart-bar"></i>
       </span>
       <a class="button is-primary is-outlined addClock" ng-click="addClock()">+</a>
@@ -425,12 +428,21 @@
 
    <div class="modal clock-modal">
       <div class="modal-background"></div>
-      <div class="modal-content">
+      <div class="modal-content chart-wrap">
          <canvas class="life-chart chart chart-bar" chart-data="data" 
-         chart-labels="labels" legend="true" chart-series="series">
+         chart-labels="labels" legend="true" chart-series="series" chart-options="options">
          </canvas>
       </div>
       <button class="modal-close is-large" aria-label="close" ng-click="toggleModal()"></button>
    </div>
+
+   <div class="modal calender-modal">
+      <div class="modal-background"></div>
+      <div class="modal-content calender-content">
+         <img src="./images/tombstone.png" alt="">
+         <h3>{{graveName}}</h3>
+         <p>{{endDate}}</p>
+      </div>
+      <button class="modal-close is-large" aria-label="close" ng-click="toggleDate()"></button>
+   </div>
 </div>
-<!-- resizable r-directions="['right']" -->

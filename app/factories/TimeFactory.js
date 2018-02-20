@@ -67,7 +67,7 @@ angular.module('CountdownApp')
       return $q((resolve,reject) => {
          $http.get(`http://api.population.io/1.0/life-expectancy/remaining/${sex}/${ctry}/2018-01-08/${age}`)
          .then(({ data }) => {
-            console.log('yrs left', (data.remaining_life_expectancy * cigRate * bmi * fitness));
+            // console.log('yrs left', (data.remaining_life_expectancy * cigRate * bmi * fitness));
             return (data.remaining_life_expectancy * cigRate * bmi * fitness);
          })
          .then( yrs => {
