@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "electron index.js"
+    "start": "electron index.js",
+    "package": "",
+    "build": "electron-packager . countdown"
   },
   "repository": {
     "type": "git",
@@ -19,11 +21,13 @@
   "homepage": "https://github.com/hunterphillips/countdown#readme",
   "dependencies": {
     "angular": "^1.6.9",
+    "angular-chart.js": "^1.1.1",
     "angular-electron": "^0.2.1",
-    "angular-resizable": "^1.2.0",
     "angular-route": "^1.6.9",
     "bulma": "^0.6.2",
+    "chart.js": "^2.7.1",
     "electron": "^1.7.12",
+    "electron-packager": "^11.0.1",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.2.0",
     "grunt-contrib-jshint": "^1.1.0",

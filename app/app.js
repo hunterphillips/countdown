@@ -1,5 +1,5 @@
 'use strict'; 
-angular.module('CountdownApp', ['angular-electron'])
+angular.module('CountdownApp', ['angular-electron', 'chart.js'])
 
 .directive('titleBar', function(){
    return {

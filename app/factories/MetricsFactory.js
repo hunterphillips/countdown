@@ -17,5 +17,15 @@ angular.module('CountdownApp')
       return lifeCost;
    }
 
-   return { calcBMI };
+   function calcFitness(hrs) {
+      let fitLevel = null;
+      if(hrs == null){
+         fitLevel = 1;
+      } else {
+         fitLevel = hrs;
+      }
+      return fitLevel;
+   }
+
+   return { calcBMI, calcFitness };
 });

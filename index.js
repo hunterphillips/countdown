@@ -10,8 +10,9 @@ function createWindow() {
    //create browser window
    win = new BrowserWindow({
       width: 550,
-      height: 615,
+      height: 625,
       'minWidth': 375,
+      'minHeight': 175,
       transparent: true,
       frame: false,
       hasShadow: false,
@@ -24,9 +25,14 @@ function createWindow() {
    //open devtools
    // win.webContents.openDevTools();
 
-   win.on('closed', () => {
-      win = null;
-   });
+   win.on('close', (event) => {
+      if (app.quitting) {
+         win = null
+      } else {
+         event.preventDefault()
+         win.hide()
+      }
+   })
 }
 
 //run create window function
@@ -38,6 +44,10 @@ app.on('window-all-closed', () => {
       app.quit();
    }
 });
+
+app.on('activate', () => { win.show() });
+app.on('before-quit', () => app.quitting = true);
+
 
 
 
