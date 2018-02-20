@@ -1,7 +1,7 @@
 node_modules
-package-lock.json
 /dist
 css/
-.sass-cache
+.sass-cache/
+package-lock.json
 .vscode/
 .DS_Store
