@@ -54,12 +54,21 @@ angular.module('CountdownApp')
         // update each clock every second
         for (let clock in clocksArr) {
             runningClock = $interval(function(){
-            if($scope.showYears === true){
-                clocksArr[clock] = TimeFactory.makeYrClockObj(clocksArr[clock].endtime, clocksArr[clock]);
-            } else {
-                clocksArr[clock] = TimeFactory.makeClockObj(clocksArr[clock].endtime, clocksArr[clock]);
-            }
-         }, 1000);
+                if($scope.showYears === true && clocksArr.length > 0){
+                    clocksArr[clock] = TimeFactory.makeYrClockObj(clocksArr[clock].endtime, clocksArr[clock]);
+                    //if time = 0, cancel interval and remove clock from array
+                    if (clocksArr[clock].total <= 0) {
+                        $interval.cancel(runningClock);
+                        clocksArr.splice(clocksArr.indexOf(clocksArr[clock]), 1);
+                    }
+                } else if(clocksArr.length > 0){
+                    clocksArr[clock] = TimeFactory.makeClockObj(clocksArr[clock].endtime, clocksArr[clock]);
+                    if (clocksArr[clock].total <= 0) {
+                        $interval.cancel(runningClock);
+                        clocksArr.splice(clocksArr.indexOf(clocksArr[clock]), 1);
+                    }
+                } 
+            }, 1000);
         }
         //hide form, show clock(s)
         $rootScope.displayClock = true; 
@@ -81,19 +90,41 @@ angular.module('CountdownApp')
         }
 
         $scope.series = ['Current Years Remaining', 'Max Years Remaining'];
+
         $scope.options = { 
             responsive: true,
             maintainAspectRatio: false,
-            legend: { display: true },
+            legend: { 
+                display: true,
+                labels: {
+                    fontColor: 'rgba(250,250,250,.78)',
+                    fontSize: 13,
+                    fontStyle: 'bold'
+                } 
+            },
             scales: {
                 yAxes: [{ 
                     display: true,
-                    ticks: { beginAtZero: true, stepValue: 10, max: 100 },
-                    scaleLabel: { display: true, labelString: 'Years'} 
+                    ticks: { 
+                        beginAtZero: true, stepValue: 10, max: 100,
+                        fontColor: 'rgba(250,250,250,.6)',
+                    },
+                    scaleLabel: { 
+                        display: true, 
+                        labelString: 'Years', 
+                        fontSize: 15,
+                        fontColor: 'rgba(250,250,250,.78)',
+                        fontStyle: 'bold'
+                    } 
                 }],
                 xAxes: [{
                     stacked: true,
                     maxBarThickness: 90,
+                    ticks: {
+                        fontSize: 13.5, 
+                        fontColor: 'rgba(250,250,250,.78)',
+                        fontStyle: 'bold'
+                    },
                 }]
             }
         };

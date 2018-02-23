@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "electron index.js",
-    "package": "",
-    "build": "electron-packager . countdown"
+    "package": "asar pack FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app.asar",
+    "build": "electron-packager . FinalCountdown && cp waiting.icns FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/electron.icns"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "angular-chart.js": "^1.1.1",
     "angular-electron": "^0.2.1",
     "angular-route": "^1.6.9",
+    "asar": "^0.14.2",
     "bulma": "^0.6.2",
     "chart.js": "^2.7.1",
     "electron": "^1.7.12",
