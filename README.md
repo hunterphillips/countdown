@@ -8,8 +8,8 @@ The application logic is written in JavaScript and rendered with the Electron fr
 
 ## Start Timer
 
-Download the![app](https://github.com/hunterphillips/countdown/releases/tag/1.0.0)!
-*OR*
+Download the [app](https://github.com/hunterphillips/countdown/releases/tag/1.0.0)!
+#### OR
 To get the application up and running locally on your machine, you'll need to have the following installed on your system:
    * [npm](https://www.npmjs.com/)
    * [node.js](https://nodejs.org/en/)
