@@ -397,6 +397,15 @@ body:hover .clockWrap-tools {
   background-color: aliceblue;
 }
 
+.clock-modal p {
+  color: rgba(255, 255, 255, 0.35);
+  position: absolute;
+  text-align: center;
+  bottom: 4vw;
+  font-size: .76em;
+  width: 70%;
+}
+
 .chart-wrap {
   height: 70vh;
 }

@@ -16,7 +16,7 @@ function createWindow() {
       transparent: true,
       frame: false,
       hasShadow: false,
-      icon: path.join(__dirname, 'images/icons/png/64x64.png')
+      // icon: path.join(__dirname, 'images/icons/png/64x64.png')
    });
 
    //load index.html
