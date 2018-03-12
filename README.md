@@ -1,4 +1,4 @@
-# The Final Countdown
+# The Final Countdown 
 
 The Final Countdown is a cross-platform desktop application that uses user demographic information, health metrics, and the World Population API to generate a running clock counting down to the estimated second of one's death.
 
