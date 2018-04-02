@@ -25,14 +25,14 @@ angular.module('CountdownApp')
          years *= 1.1364;
       }
       if (+clock.smokeRate === 0.96) {
-         years *= 1.0417;
+         years *= 1.042;
       } else if (+clock.smokeRate === 0.92){
-         years *= 1.087;
+         years *= 1.09;
       } else if (+clock.smokeRate === 0.88) {
          years *= 1.14;
       }
       if (+clock.fitLevel === 0.99){
-         years *= 1.0707;
+         years *= 1.1;
       } else if(clock.fitLevel === 1){
          years *= 1.06;
       } else if(+clock.fitLevel === 1.03){
