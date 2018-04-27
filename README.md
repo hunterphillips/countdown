@@ -1,6 +1,6 @@
 # The Final Countdown 
 
-The Final Countdown is a cross-platform desktop application that uses user demographic information, health metrics, and the World Population API to generate a running clock counting down to the estimated second of one's death.
+The Final Countdown is a cross-platform desktop application that uses demographic information, health metrics, and the World Population API to generate a running clock counting down to the precise moment you'll drop dead. Make every second count.
 
 The application logic is written in JavaScript and rendered with the Electron framework.
 
@@ -29,7 +29,6 @@ Then follow these steps:
 * [Chart.js](http://www.chartjs.org/) - HTML5 based JavaScript charts
 * [Moment.js](https://momentjs.com/) - JavaScript tool for manipulating dates and times
 * [Bulma](https://bulma.io/) - Open source CSS framework based on Flexbox
-* Sass
 
 ## Credits
 - World Population API: <http://api.population.io/>
