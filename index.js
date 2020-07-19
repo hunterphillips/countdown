@@ -15,7 +15,7 @@ function createWindow() {
     minHeight: 175,
     transparent: true,
     frame: false,
-    hasShadow: false
+    hasShadow: false,
     // icon: path.join(__dirname, 'images/icons/png/64x64.png')
   });
 
@@ -25,7 +25,7 @@ function createWindow() {
   //open devtools
   // win.webContents.openDevTools();
 
-  win.on('close', event => {
+  win.on('close', (event) => {
     if (app.quitting) {
       win = null;
     } else {
