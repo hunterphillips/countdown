@@ -15,8 +15,12 @@ function createWindow() {
     minHeight: 175,
     transparent: true,
     frame: false,
-    hasShadow: false
+    hasShadow: false,
     // icon: path.join(__dirname, 'images/icons/png/64x64.png')
+    // 09/08/20 -- Doesnt work without?
+    webPreferences: {
+      nodeIntegration: true,
+    },
   });
 
   //load index.html
@@ -25,7 +29,7 @@ function createWindow() {
   //open devtools
   // win.webContents.openDevTools();
 
-  win.on('close', event => {
+  win.on('close', (event) => {
     if (app.quitting) {
       win = null;
     } else {
@@ -36,7 +40,7 @@ function createWindow() {
 }
 
 //run create window function
-app.on('ready', createWindow);
+app.whenReady().then(createWindow);
 
 //quit when all windows closed
 app.on('window-all-closed', () => {
