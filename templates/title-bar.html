@@ -1,11 +1,20 @@
-<div class="title-bar" ng-class="{ 'hideBar': displayClock }">
-   <img src="./images/blk-cadaver.png" alt="" ng-hide="displayClock">
-   <img src="./images/white-cadaver2.png" alt="" ng-hide="!displayClock" ng-class="{ 'alt-logo': displayClock }">
-   <div class="title">The Final Countdown</div>
+<div class="title-bar-wrap" style="-webkit-app-region: no-drag">
+	<div class="title-bar" ng-class="{ 'hideBar': displayClock }">
+		<img src="./images/blk-cadaver.png" alt="" ng-hide="displayClock" />
+		<img
+			src="./images/white-cadaver2.png"
+			alt=""
+			ng-hide="!displayClock"
+			ng-class="{ 'alt-logo': displayClock }"
+		/>
+		<div class="title">The Final Countdown</div>
 
-   <div class="title-bar-btns">
-      <button class="min-btn" ng-click="minWindow()">-</button>
-      <button class="max-btn" ng-click="maxWindow()">+</button>
-      <button class="close-btn" ng-click="closeWindow()">x</button>
-   </div>
+		<div class="title-bar-btns">
+			<span id="onTopMsg">always on top</span>
+			<input id="onTopFlag" type="checkbox" ng-model="onTop" ng-change="testWin(onTop)"></input>
+			<button class="min-btn" ng-click="minWindow()">-</button>
+			<button class="max-btn" ng-click="maxWindow()">+</button>
+			<button class="close-btn" ng-click="closeWindow()">x</button>
+		</div>
+	</div>
 </div>

@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html class="formHtml" lang="en" ng-app="CountdownApp">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel='stylesheet' type='text/css' href='node_modules/bulma/css/bulma.css'>
-   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
-   <link rel="stylesheet" href="css/main.css">
-   <title>The Final Countdown</title>
-</head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="node_modules/bulma/css/bulma.css"
+		/>
+		<link
+			href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Montserrat:500"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="css/main.css" />
+		<title>The Final Countdown</title>
+	</head>
 
-<body ng-class="{ 'visi': !displayClock, 'invi': displayClock, 'show-border': displayClock }">
+	<body
+		ng-class="{ 'visi': !displayClock, 'invi': displayClock, 'show-border': displayClock }"
+	>
+		<title-bar></title-bar>
 
-   <title-bar></title-bar>
-   
-   <user-form></user-form>
-   
+		<user-form></user-form>
 
-   <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-   <script type="text/javascript" src="node_modules/moment/min/moment.min.js"></script>
-   <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-   <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
-   <script src="node_modules/chart.js/dist/chart.min.js"></script>
-   <script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
-   <script type="text/javascript" src="node_modules/angular-electron/angular-electron.min.js"></script>
-   <!-- <script type="text/javascript" src="node_modules/angular-resizable/angular-resizable.min.js"></script> -->
-   <!-- app scripts -->
-   <script type="text/javascript" src="app/app.js"></script>
-   <!-- factories -->
-   <script type="text/javascript" src="app/factories/TimeFactory.js"></script>
-   <script type="text/javascript" src="app/factories/MetricsFactory.js"></script>
-   <script type="text/javascript" src="app/factories/ChartFactory.js"></script>
-   <!-- controllers -->
-   <script type="text/javascript" src="app/controllers/UserFormCtrl.js"></script>
-   <script type="text/javascript" src="app/controllers/TitleBarCtrl.js"></script>
-</body>
+		<script
+			type="text/javascript"
+			src="node_modules/jquery/dist/jquery.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="node_modules/moment/min/moment.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="node_modules/angular/angular.min.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="node_modules/angular-route/angular-route.min.js"
+		></script>
+		<script src="node_modules/chart.js/dist/chart.min.js"></script>
+		<script src="node_modules/angular-chart.js/dist/angular-chart.min.js"></script>
+		<script
+			type="text/javascript"
+			src="node_modules/angular-electron/angular-electron.min.js"
+		></script>
+		<!-- <script type="text/javascript" src="node_modules/angular-resizable/angular-resizable.min.js"></script> -->
+
+		<!-- app scripts -->
+		<script type="text/javascript" src="app/app.js"></script>
+		<!-- factories -->
+		<script type="text/javascript" src="app/factories/TimeFactory.js"></script>
+		<script
+			type="text/javascript"
+			src="app/factories/MetricsFactory.js"
+		></script>
+		<script type="text/javascript" src="app/factories/ChartFactory.js"></script>
+		<!-- controllers -->
+		<script
+			type="text/javascript"
+			src="app/controllers/UserFormCtrl.js"
+		></script>
+		<script
+			type="text/javascript"
+			src="app/controllers/TitleBarCtrl.js"
+		></script>
+	</body>
 </html>
