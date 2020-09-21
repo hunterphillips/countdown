@@ -1,45 +1,47 @@
 {
-  "name": "countdown",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "electron index.js",
-    "package": "asar pack FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app.asar",
-    "build": "electron-packager . FinalCountdown && cp waiting.icns FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/electron.icns"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hunterphillips/countdown.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hunterphillips/countdown/issues"
-  },
-  "homepage": "https://github.com/hunterphillips/countdown#readme",
-  "dependencies": {
-    "angular": "^1.6.10",
-    "angular-chart.js": "^1.1.1",
-    "angular-electron": "^0.2.1",
-    "angular-route": "^1.6.10",
-    "asar": "^0.14.3",
-    "bulma": "^0.6.2",
-    "chart.js": "^2.7.2",
-    "electron": "^7.2.4",
-    "electron-packager": "^14.2.1",
-    "grunt": "^1.0.2",
-    "grunt-browserify": "^5.3.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.1",
-    "handlebars": "^4.0.11",
-    "hbsfy": "^2.8.1",
-    "jquery": "^3.3.1",
-    "matchdep": "^2.0.0",
-    "mdi": "^2.2.43",
-    "moment": "^2.22.1"
-  },
-  "devDependencies": {}
+	"name": "countdown",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "electron index.js",
+		"package": "asar pack FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app.asar",
+		"build": "electron-packager . FinalCountdown && cp waiting.icns FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/electron.icns",
+		"buildwin": "electron-packager . FinalCountdown"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/hunterphillips/countdown.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/hunterphillips/countdown/issues"
+	},
+	"homepage": "https://github.com/hunterphillips/countdown#readme",
+	"dependencies": {
+		"angular": "^1.6.10",
+		"angular-chart.js": "^1.1.1",
+		"angular-electron": "^0.2.1",
+		"angular-route": "^1.6.10",
+		"asar": "^0.14.3",
+		"bulma": "^0.6.2",
+		"chart.js": "^2.7.2",
+		"electron": "^7.2.4",
+		"grunt": "^1.0.2",
+		"grunt-browserify": "^5.3.0",
+		"grunt-contrib-jshint": "^1.1.0",
+		"grunt-contrib-sass": "^1.0.0",
+		"grunt-contrib-watch": "^1.0.1",
+		"handlebars": "^4.0.11",
+		"hbsfy": "^2.8.1",
+		"jquery": "^3.3.1",
+		"matchdep": "^2.0.0",
+		"mdi": "^2.2.43",
+		"moment": "^2.22.1"
+	},
+	"devDependencies": {
+		"electron-packager": "^14.2.1"
+	}
 }

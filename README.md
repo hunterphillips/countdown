@@ -1,7 +1,5 @@
 # The Final Countdown
 
->*Temporarily disabled. Population.io (formerly, the World Population API) has updated their endpoint and api access. Check back for an updated version. Thanks!*
-
 The Final Countdown is a desktop application that uses demographic information, health metrics, and the World Population API to generate a running clock counting down to the precise moment you'll drop dead. Make every second count.
 
 The application logic is written in JavaScript and rendered with the Electron framework.

@@ -1,4 +1,4 @@
-<form class="userInput field" name="userForm" ng-hide="displayClock">
+<form class="userInput field" name="userForm" ng-hide="displayClock" style="-webkit-app-region: no-drag">
    <div class="form-section">
       <label for="name" class="label name-label">Name</label>
       <div class="control name">
@@ -155,13 +155,13 @@
 
    <div class="form-section sex-section">
       <label for "male" class="label sex">Male</label>
-      <input class="radio sexSelect" type="radio" name="sex" value="male" ng-model="user.sex" required>
+      <input class="radio sexSelect" type="radio" name="sex" value=".97" ng-model="user.sex" required>
       <label for "female" class="label sex female-label">Female</label>
-      <input class="radio sexSelect" type="radio" name="sex" value="female" ng-model="user.sex">
+      <input class="radio sexSelect" type="radio" name="sex" value="1.03" ng-model="user.sex">
       <br>
    </div>
    
-   <div class="form-section country-section">
+   <!--<div class="form-section country-section">
       <p class="control has-icons-left">
          <span class="select">
             <select name="country" class="country" ng-model="user.country" required>
@@ -321,7 +321,7 @@
             <i class="fas fa-globe"></i>
          </span>
       </p>
-   </div>
+   </div>-->
    
    <div class="form-section">
       <div class="control">
@@ -329,14 +329,11 @@
             <select name="smoke" ng-model="user.smokeRate" required>
                <option value="" selected="selected" disabled>Cigarettes per day</option>
                <option value="1">None</option>
-               <option value=".96">Up to 10</option>
-               <option value=".92">Up to 20</option>
-               <option value=".88">Over 30</option>
+               <option value=".97">Up to 10</option>
+               <option value=".93">Up to 20</option>
+               <option value=".89">Over 30</option>
             </select>
          </span>
-         <!-- <span class="icon is-small is-left">
-            <i class="fas fa-globe"></i>
-         </span> -->
       </div>
    </div>
 
@@ -377,7 +374,7 @@
 </form>
 
 <div class="clock-wrap" ng-hide="!displayClock">
-   <div class="clock" ng-repeat="clock in clocks">
+   <div class="clock" ng-repeat="clock in clocksCopy">
       <span class="clock-name">{{clock.name}}</span>
       <div class="clockSegment" ng-show="showYears">
          <span class="years">{{clock.years}}</span>
