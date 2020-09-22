@@ -18,7 +18,6 @@ function createWindow() {
 		hasShadow: true,
 		alwaysOnTop: true,
 		// titleBarStyle: "customButtonsOnHover",
-		// icon: path.join(__dirname, "images/icons/png/64x64.png"),
 		// 09/08/20 -- Doesnt work without?
 		webPreferences: {
 			nodeIntegration: true,
@@ -29,7 +28,7 @@ function createWindow() {
 	win.loadURL(`file://${__dirname}/index.html`);
 
 	//open devtools
-	win.webContents.openDevTools();
+	// win.webContents.openDevTools();
 
 	win.on("close", (event) => {
 		if (app.quitting) {
