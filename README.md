@@ -40,4 +40,3 @@ Then follow these steps:
 
 - World Population API: <http://api.population.io/>
 - Yaphi Berhanu [Countdown Timer](https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/)
-- [NSS](http://nashvillesoftwareschool.com/) - Incredible web development program in Nashille, TN.
