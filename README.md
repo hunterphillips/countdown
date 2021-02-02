@@ -31,7 +31,6 @@ Then follow these steps:
 
 - [Electron](https://electronjs.org/) - Open-source framework for building desktop applications
 - [AngularJS](https://angularjs.org/) - Javascript Framework
-- JavaScript
 - [Chart.js](http://www.chartjs.org/) - HTML5 based JavaScript charts
 - [Moment.js](https://momentjs.com/) - JavaScript tool for manipulating dates and times
 - [Bulma](https://bulma.io/) - Open source CSS framework based on Flexbox
