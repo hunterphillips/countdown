@@ -8,7 +8,7 @@ The application logic is written in JavaScript and rendered with the Electron fr
 
 ## Start Timer
 
-Download the [app](https://github.com/hunterphillips/countdown/releases/tag/1.0.1)!
+Download the [app](https://github.com/hunterphillips/countdown/releases)!
 
 #### OR
 
