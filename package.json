@@ -6,8 +6,7 @@
 	"scripts": {
 		"start": "electron index.js",
 		"package": "asar pack FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/app.asar",
-		"build": "electron-packager . FinalCountdown && cp waiting.icns FinalCountdown-darwin-x64/FinalCountdown.app/Contents/Resources/electron.icns",
-		"buildwin": "electron-packager . FinalCountdown"
+		"buildwin": "electron-packager . FinalCountdown --icon=images\\icons\\win\\windowsWaiting.ico"
 	},
 	"repository": {
 		"type": "git",

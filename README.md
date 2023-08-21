@@ -8,7 +8,7 @@ The application logic is written in JavaScript and rendered with the Electron fr
 
 ## Start Timer
 
-Download the [app](https://github.com/hunterphillips/countdown/releases/tag/1.0.1)!
+Download the [app](https://github.com/hunterphillips/countdown/releases)!
 
 #### OR
 
@@ -31,7 +31,6 @@ Then follow these steps:
 
 - [Electron](https://electronjs.org/) - Open-source framework for building desktop applications
 - [AngularJS](https://angularjs.org/) - Javascript Framework
-- JavaScript
 - [Chart.js](http://www.chartjs.org/) - HTML5 based JavaScript charts
 - [Moment.js](https://momentjs.com/) - JavaScript tool for manipulating dates and times
 - [Bulma](https://bulma.io/) - Open source CSS framework based on Flexbox
@@ -40,4 +39,3 @@ Then follow these steps:
 
 - World Population API: <http://api.population.io/>
 - Yaphi Berhanu [Countdown Timer](https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/)
-- [NSS](http://nashvillesoftwareschool.com/) - Incredible web development program in Nashille, TN.
